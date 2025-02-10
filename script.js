@@ -1,23 +1,28 @@
 function isSameType(value1, value2) {
-  //your js code here
-	if(!isNaN(value1)){
-		value1 = Number(value1);
-	}
-	if(!isNaN(value2)){
-		value2 = Number(value2);
-	}
-	
-	if(typeof(value1) == typeof(value2)){
-		return true;
-	}else if(isNaN(value1) && isNaN(value2)){
-		return true;
-	}
-		else if(isNaN(value1) || isNaN(value2)){
-			return false;
-		}
-	else{
-		return false;
-	}
+  // Convert to number if possible
+  if (!isNaN(value1)) {
+    value1 = Number(value1);
+  }
+  if (!isNaN(value2)) {
+    value2 = Number(value2);
+  }
+
+  // Check if both are NaN
+  if (isNaN(value1) && isNaN(value2)) {
+    return true;
+  }
+
+  // Check if only one is NaN
+  if (isNaN(value1) || isNaN(value2)) {
+    return false;
+  }
+
+  // Check if types are the same
+  if (typeof(value1) === typeof(value2)) {
+    return true;
+  } else {
+    return false;
+  }
 }
    
 // do not change the code below.
